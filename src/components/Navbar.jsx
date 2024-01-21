@@ -6,20 +6,21 @@ import NoImage from "../assets/Images/NoImage.jpg";
 const onImageError = (e) => {
   e.target.src = {NoImage}
 }
-export default function Navbar({groups}) {
+export default function Navbar({ groups, setActiveChat }) {
   return (
     <div className="flex flex-col items-center relative w-full h-full px-4 py-7">
       <div className="flex flex-col items-center w-full">
         <span className="text-gray-400 text-xs my-2">Groups</span>
         <ul className="flex flex-col gap-y-2 items-center">
           <li
-            className="rounded-full bg-white w-[90%] h-8 p-2 mb-2 text-purple-500 hover:bg-purple-100 hover:text-white hover:cursor-pointer"
+            className="rounded-full bg-white w-[92%] h-8 p-2 mb-2 text-purple-500 hover:bg-purple-100 hover:text-white hover:cursor-pointer"
             as="button"
             onClick={() => console.log("clicked")}
           >
             <PlusIcon />
           </li>
           {groups?.slice(3)?.map((group) => (
+            <li key={group.id} onClick={()=>setActiveChat(group)} className="hover:cursor-pointer">
             <img
               className="h-9 rounded-full mb-2"
               src={group.pp ? group.pp : NoImage}
@@ -27,6 +28,7 @@ export default function Navbar({groups}) {
               id={group.id}
               onError={onImageError}
             />
+            </li>
           ))}
         </ul>
       </div>
@@ -42,6 +44,7 @@ export default function Navbar({groups}) {
             <PlusIcon />
           </li>
           {groups?.slice(3)?.map((group) => (
+            <li key={group.id} onClick={()=>setActiveChat(group)} className="hover:cursor-pointer">
             <img
               className="h-9 rounded-full mb-2"
               src={group.pp ? group.pp : NoImage}
@@ -49,20 +52,21 @@ export default function Navbar({groups}) {
               id={group.id}
               onError={onImageError}
             />
+            </li>
           ))}
         </ul>
       </div>
 
       <div className="absolute bottom-10 flex flex-col items-center w-full justify-center">
         <div
-            className="rounded-full bg-white w-[60%] h-9 p-2 mb-4 text-purple-500 hover:bg-purple-100 hover:text-white hover:cursor-pointer"
+            className="rounded-full bg-white w-[34%] h-9 p-2 mb-4 text-purple-500 hover:bg-purple-100 hover:text-white hover:cursor-pointer"
             as="button"
             onClick={() => console.log("support")}
           >
             <UserGroupIcon />
         </div>
         <div
-            className="rounded-full bg-white w-[60%] h-9 p-2 text-purple-500 hover:bg-purple-100 hover:text-white hover:cursor-pointer"
+            className="rounded-full bg-white w-[34%] h-9 p-2 text-purple-500 hover:bg-purple-100 hover:text-white hover:cursor-pointer"
             as="button"
             onClick={() => console.log("logout")}
           >
