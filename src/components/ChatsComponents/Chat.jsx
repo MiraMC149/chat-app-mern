@@ -86,7 +86,7 @@ export default function Chat({ activeChat }) {
         let formData = file;
         console.log(formData);
         axios
-          .post("/api/uploadfile", formData, {
+          .post("http://localhost:5000/api/uploadfile", formData, {
             headers: {
               'Content-Type': 'multipart/form-data' // Set the Content-Type header
             }})
@@ -237,7 +237,7 @@ export default function Chat({ activeChat }) {
           type="text"
           id="textInput"
           placeholder="Type your message..."
-          value={message != {} ? message?.message : ""}
+          value={message != {} ? message?.message : message?.attachment ? message?.attachment : ""}
           onChange={(e) =>
             setMessage({
               SenderId: user?.UserId,
