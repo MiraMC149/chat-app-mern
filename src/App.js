@@ -1,11 +1,11 @@
 import React from 'react';
-import ChatPage from './pages/ChatPage';
+import Login from './pages/Login';
 import './App.css';
 
 function App() {
   return (
     <div className="w-full h-screen">
-      <ChatPage/>
+      <Login />
     </div>
   );
 }

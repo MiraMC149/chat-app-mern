@@ -10,7 +10,7 @@ export default function ChatsList({groups, activeChat, setActiveChat}) {
         <span className='text-lg text-gray-600 font-semibold'>Chats</span>
         <div className='flex relative my-4'>
             <MagnifyingGlassIcon className='text-gray-300 w-4 h-4 absolute top-1.5 left-1'/>
-            <input type="text" placeholder='Search ...' className='rounded-md ring-1 ring-gray-200 placeholder-gray-300 p-1 pl-6 focus:outline-0 focus:ring-purple-500 hover:ring-purple-200 hover:shadow-md'/>
+            <input type="text" placeholder='Search ...' className='rounded-md ring-1 ring-gray-200 placeholder-gray-300 p-1 pl-6 focus:outline-0 focus:ring-indigo-500 hover:ring-indigo-200 hover:shadow-md'/>
         </div>
         <div className='flex flex-col'>
             <div className='text-gray-300 flex items-center py-3 border-b-2 border-b-gray-100'>
@@ -21,7 +21,7 @@ export default function ChatsList({groups, activeChat, setActiveChat}) {
         <span className="text-gray-400 text-xs my-2">Pinned</span>
         <ul className="flex flex-col gap-y-2">
           {groups?.slice(3)?.map((group) => (
-            <li key={group.id} className={`${activeChat.id === group.id ? 'bg-purple-300 hover:bg-purple-400' : 'hover:bg-purple-100'} flex relative rounded-md p-2`} onClick={()=>setActiveChat(group)}>
+            <li key={group.id} className={`${activeChat.id === group.id ? 'bg-indigo-300 hover:bg-indigo-400' : 'hover:bg-indigo-100'} flex relative rounded-md p-2`} onClick={()=>setActiveChat(group)}>
             <div className='relative'>
             <img
               className="w-10 h-10 border-2 border-gray-200 rounded-full"
@@ -50,7 +50,7 @@ export default function ChatsList({groups, activeChat, setActiveChat}) {
             <div className="flex flex-col">
         <ul className="flex flex-col max-h-[14rem] py-2 overflow-y-scroll gap-y-2">
           {groups?.map((group) => (
-            <li key={group.id} className={`${activeChat?.id === group?.id ? 'bg-purple-300 hover:bg-purple-400' : 'hover:bg-purple-100'} flex relative rounded-md p-2`} onClick={()=>setActiveChat(group)}>
+            <li key={group.id} className={`${activeChat?.id === group?.id ? 'bg-indigo-300 hover:bg-indigo-400' : 'hover:bg-indigo-100'} flex relative rounded-md p-2`} onClick={()=>setActiveChat(group)}>
             <div className='relative'>
             <img
               className="w-10 h-10 border-2 border-gray-200 rounded-full"

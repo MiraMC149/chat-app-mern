@@ -13,7 +13,7 @@ export default function Navbar({ groups, setActiveChat }) {
         <span className="text-gray-400 text-xs my-2">Groups</span>
         <ul className="flex flex-col gap-y-2 items-center">
           <li
-            className="rounded-full bg-white w-[92%] h-8 p-2 mb-2 text-purple-500 hover:bg-purple-100 hover:text-white hover:cursor-pointer"
+            className="rounded-full bg-white w-[92%] h-8 p-2 mb-2 text-indigo-500 hover:bg-indigo-100 hover:text-white hover:cursor-pointer"
             as="button"
             onClick={() => console.log("clicked")}
           >
@@ -37,7 +37,7 @@ export default function Navbar({ groups, setActiveChat }) {
         <span className="text-gray-400 text-xs my-2">People</span>
         <ul className="flex flex-col w-full gap-y-2 items-center">
           <li
-            className="rounded-full bg-white w-[90%] h-8 p-2 mb-2 text-purple-500 hover:bg-purple-100 hover:text-white hover:cursor-pointer"
+            className="rounded-full bg-white w-[90%] h-8 p-2 mb-2 text-indigo-500 hover:bg-indigo-100 hover:text-white hover:cursor-pointer"
             as="button"
             onClick={() => console.log("clicked")}
           >
@@ -59,14 +59,14 @@ export default function Navbar({ groups, setActiveChat }) {
 
       <div className="absolute bottom-10 flex flex-col items-center w-full justify-center">
         <div
-            className="rounded-full bg-white w-[34%] h-9 p-2 mb-4 text-purple-500 hover:bg-purple-100 hover:text-white hover:cursor-pointer"
+            className="rounded-full bg-white w-[34%] h-9 p-2 mb-4 text-indigo-600 hover:bg-indigo-100 hover:text-white hover:cursor-pointer"
             as="button"
             onClick={() => console.log("support")}
           >
             <UserGroupIcon />
         </div>
         <div
-            className="rounded-full bg-white w-[34%] h-9 p-2 text-purple-500 hover:bg-purple-100 hover:text-white hover:cursor-pointer"
+            className="rounded-full bg-white w-[34%] h-9 p-2 text-indigo-600 hover:bg-indigo-100 hover:text-white hover:cursor-pointer"
             as="button"
             onClick={() => console.log("logout")}
           >

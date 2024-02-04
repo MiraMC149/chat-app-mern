@@ -170,14 +170,14 @@ export default function Chat({ activeChat, mobilePhoneOpen, setMobilePhoneOpen }
 
         <div className="absolute flex right-5 top-7">
           <div
-            className="rounded-full bg-gray-100 w-8 h-8 p-2 mx-2 text-purple-500 hover:bg-purple-100 hover:text-white hover:cursor-pointer"
+            className="rounded-full bg-gray-100 w-8 h-8 p-2 mx-2 text-indigo-500 hover:bg-indigo-100 hover:text-white hover:cursor-pointer"
             as="button"
             onClick={() => console.log("clicked")}
           >
             <PhoneIcon />
           </div>
           <div
-            className="rounded-full flex flex-col text-center items-center justify-center bg-gray-100 w-8 h-8 p-2 text-purple-500 hover:bg-purple-100 hover:text-white hover:cursor-pointer"
+            className="rounded-full flex flex-col text-center items-center justify-center bg-gray-100 w-8 h-8 p-2 text-indigo-500 hover:bg-indigo-100 hover:text-white hover:cursor-pointer"
             as="button"
             onClick={() => console.log("clicked")}
           >
@@ -234,7 +234,7 @@ export default function Chat({ activeChat, mobilePhoneOpen, setMobilePhoneOpen }
         ))}
       </div>
       <div className="absolute flex bottom-0 w-full border-t-2 border-t-gray-200 items-center h-[10%] px-4">
-        <FaceSmileIcon className="w-6 h-6 text-purple-200 hover:text-purple-400 mr-4" />
+        <FaceSmileIcon className="w-6 h-6 text-indigo-200 hover:text-indigo-400 mr-4" />
         <input
           type="text"
           id="textInput"
@@ -249,15 +249,15 @@ export default function Chat({ activeChat, mobilePhoneOpen, setMobilePhoneOpen }
             })
           }
           onKeyDown={handleKeyDown}
-          className="placeholder-gray-200 text-gray-400 w-[88%] py-2 px-3 focus:outline-none rounded focus:ring-1 focus:ring-purple-200"
+          className="placeholder-gray-200 text-gray-400 w-[88%] py-2 px-3 focus:outline-none rounded focus:ring-1 focus:ring-indigo-200"
         />
         <div className="absolute right-0 flex">
           <PaperAirplaneIcon
-            className="w-6 h-6 text-purple-200 hover:text-purple-400 mr-4"
+            className="w-6 h-6 text-indigo-200 hover:text-indigo-400 mr-4"
             onClick={() => handleSend()}
           />
           <PaperClipIcon
-            className="w-6 h-6 text-purple-200 hover:text-purple-400 mr-4 transform -rotate-45"
+            className="w-6 h-6 text-indigo-200 hover:text-indigo-400 mr-4 transform -rotate-45"
             onClick={(e) => handleMenuClick(e)}
           />
         </div>
@@ -265,10 +265,10 @@ export default function Chat({ activeChat, mobilePhoneOpen, setMobilePhoneOpen }
           ref={attachmentMenuRef}
           className={`${
             showAttachMenu ? "block" : "hidden"
-          } absolute right-5 bottom-12 rounded-md bg-slate-50 text-gray-400 border-2 border-purple-200 items-center`}
+          } absolute right-5 bottom-12 rounded-md bg-slate-50 text-gray-400 border-2 border-indigo-200 items-center`}
         >
           <li
-            className="p-2 flex items-center pr-4 text-purple-400 hover:bg-purple-100 hover:cursor-pointer hover:text-purple-600"
+            className="p-2 flex items-center pr-4 text-indigo-400 hover:bg-indigo-100 hover:cursor-pointer hover:text-indigo-600"
             onClick={() => handleAttachment()}
           >
             <DocumentIcon className="w-4 h-4 mr-2" />
@@ -282,7 +282,7 @@ export default function Chat({ activeChat, mobilePhoneOpen, setMobilePhoneOpen }
             />
           </li>
           <li
-            className="p-2 flex items-center text-purple-400 hover:bg-purple-100 hover:cursor-pointer hover:text-purple-600"
+            className="p-2 flex items-center text-indigo-400 hover:bg-indigo-100 hover:cursor-pointer hover:text-indigo-600"
             onClick={() => handleAttachment()}
           >
             <PhotoIcon className="w-4 h-4 mr-2" />
@@ -297,7 +297,7 @@ export default function Chat({ activeChat, mobilePhoneOpen, setMobilePhoneOpen }
             />
           </li>
           <li
-            className="p-2 flex items-center text-purple-400 hover:bg-purple-100 hover:cursor-pointer hover:text-purple-600"
+            className="p-2 flex items-center text-indigo-400 hover:bg-indigo-100 hover:cursor-pointer hover:text-indigo-600"
             onClick={() => handleAttachment()}
           >
             <VideoCameraIcon className="w-4 h-4 mr-2" />
