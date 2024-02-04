@@ -7,13 +7,14 @@ import {
   PhotoIcon,
   VideoCameraIcon,
   PaperAirplaneIcon,
+  Bars3Icon,
 } from "@heroicons/react/24/solid";
 import NoImage from "../../assets/Images/NoImage.jpg";
 import { motion } from "framer-motion";
 import user from "../../userData";
 import chats from "../../Chats";
 import axios from "axios";
-export default function Chat({ activeChat }) {
+export default function Chat({ activeChat, mobilePhoneOpen, setMobilePhoneOpen }) {
   const onImageError = (e) => {
     e.target.src = { NoImage };
   };
@@ -84,7 +85,6 @@ export default function Chat({ activeChat }) {
     if (message?.message?.trim() !== "") {
       if (message?.attachment !== null) {
         let formData = file;
-        console.log(formData);
         axios
           .post("http://localhost:5000/api/uploadfile", formData, {
             headers: {
@@ -136,6 +136,7 @@ export default function Chat({ activeChat }) {
     event.stopPropagation();
     setShowAttachMenu(!showAttachMenu);
   };
+
   useEffect(() => {
     function handleClickOutside(event) {
       if (attachmentMenuRef.current && !attachmentMenuRef.current.contains(event.target)) {
@@ -153,6 +154,7 @@ export default function Chat({ activeChat }) {
     <div className="bg-white w-full h-full relative rounded-tr-lg rounded-br-lg border-l-2 border-l-gray-200">
       <div className="w-full h-[15%] border-b-2 border-b-gray-200 relative">
         <div className="w-full px-4 items-center py-4 flex">
+          <Bars3Icon className="w-4 h-4 text-gray-400 mr-3 lg:hidden" onClick={()=>setMobilePhoneOpen(!mobilePhoneOpen)}/>
           <img
             src={activeChat?.pp ? activeChat.pp : NoImage}
             className="w-8 h-8 border-2 border-gray-100 rounded-full mr-2"
