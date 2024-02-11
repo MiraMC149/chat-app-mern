@@ -5,15 +5,15 @@ import ChatsList from '../components/ChatsComponents/ChatsList.jsx';
 import groups from "../data.js";
 import MobileNavbar from '../components/MobileNavbar.jsx';
 import { CSSTransition } from 'react-transition-group';
-export default function ChatPage() {
+export default function ChatPage({isAuthenticated, setIsAuthenticated}) {
   const [activeChat, setActiveChat] = useState(groups[0]);
   const mobileMenuRef = useRef(null);
   const [mobilePhoneOpen, setMobilePhoneOpen] = useState(false);
-  console.log('isOpen',mobilePhoneOpen)
+ 
   return (
     <div className='flex relative w-full h-full bg-gray-100'>
         <div className='w-[7%] hidden lg:block h-full'>
-            <Navbar groups={groups} setActiveChat={setActiveChat}/>
+            <Navbar groups={groups} setIsAuthenticated={setIsAuthenticated} isAuthenticated={isAuthenticated} setActiveChat={setActiveChat}/>
         </div>
         {mobilePhoneOpen && <CSSTransition nodeRef={mobileMenuRef} in={mobilePhoneOpen} timeout={300} classNames="">
             <MobileNavbar mobilePhoneOpen={mobilePhoneOpen} setMobilePhoneOpen={setMobilePhoneOpen}/>
